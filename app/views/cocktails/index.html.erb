@@ -8,7 +8,12 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
             <div class="card-description">
               <h3><%= cocktail.name %></h3>
-              <p>Very cool stuff, useful and smart</p>
+              <p>
+              Ingredients:
+                <% cocktail.doses.each do |dose| %>
+                  <%= dose.ingredient.name %>,
+                <% end %>
+              </p>
             </div>
           <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
         </div>
