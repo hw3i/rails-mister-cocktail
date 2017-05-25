@@ -40,7 +40,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
-# Use Capistrano for deploymen
+# Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 
