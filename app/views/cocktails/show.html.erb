@@ -10,6 +10,22 @@
     <br>
 
 
-  <%= link_to "Back To Cocktail List", cocktails_path %> ||
-  <%= link_to "Add A Dose", new_cocktail_dose_path(@cocktail) %>
+  <%= link_to "Back To Cocktail List", cocktails_path %>
+</div>
+
+<hr>
+
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-6 col-sm-offset-2">
+      <h3>Add A Dose</h3>
+      <%= simple_form_for [@cocktail, @dose], class: 'form-inline' do |f| %>
+        <%= f.input :description %>
+        <%= f.input :ingredient_id, collection: Ingredient.all.order(:name) %>
+
+        <%= f.submit "Create A Dose", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
 </div>
