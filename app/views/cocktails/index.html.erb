@@ -1,8 +1,20 @@
-<h1>All The Cocktails</h1>
+<div class="container padded">
+  <h2>All The Cocktails</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+      <% @cocktails.each do |cocktail| %>
 
-<%= link_to "Add A Cocktail", new_cocktail_path %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+            <div class="card-description">
+              <h3><%= cocktail.name %></h3>
+              <p>Very cool stuff, useful and smart</p>
+            </div>
+          <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+        </div>
+        <br>
 
-<% @cocktails.each do |cocktail| %>
-  <h3><%= cocktail.name %></h3>
-  <%= link_to "Delete", cocktail_path(cocktail), method: :delete %>
-<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

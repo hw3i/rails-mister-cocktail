@@ -12,12 +12,17 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <%= yield %>
-        </div>
-      </div>
+  <%= render "layouts/shared/navbar" %>
+
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(62, 85, 216, 0.6) 0%, rgba(124, 131, 175, 0.6) 50%), url('background.jpg');">
+    <div class="banner-content">
+      <h1>Mr. Cocktail</h1>
     </div>
+  </div>
+
+    <%= yield %>
+
+    <%= render "layouts/shared/footer" %>
+
   </body>
 </html>
