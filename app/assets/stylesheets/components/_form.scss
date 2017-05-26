@@ -1,0 +1,34 @@
+.form-style {
+  background: #7C83AF;
+}
+
+.panel-default {
+  border-color: #ddd;
+}
+
+.panel-default .panel-heading {
+  color: black;
+  background-color: #8188B3;
+  border-color: #959cc9;
+}
+
+.panel-heading {
+  padding: 10px, 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+
+.panel-body {
+  padding: 15px;
+}
+
+#dose-box {
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+}
+
+.btn-dose {
+  width: 100%;
+  color: white;
+  background-color: #00C3C7;
+}
