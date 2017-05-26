@@ -5,7 +5,7 @@
       <!-- insert <div class="card"> -->
       <% @cocktails.each do |cocktail| %>
 
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photos? ? cocktail.photos.first.path : 'drink_yqodry', height: 300, width: 400, crop: :fill %>');">
             <div class="card-description">
               <h3><%= cocktail.name %></h3>
               <p>
@@ -17,8 +17,9 @@
             </div>
           <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
         </div>
+        <%= link_to "Delete Cocktail", cocktail_path(cocktail), method: :delete %>
         <br>
-
+        <br>
       <% end %>
     </div>
   </div>

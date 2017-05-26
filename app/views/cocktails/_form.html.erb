@@ -1,5 +1,6 @@
 <%= simple_form_for @cocktail, class: 'form-inline' do |f| %>
   <%= f.input :name %>
+  <%= f.input :photos, as: :attachinary %>
 
-  <%= f.submit "Create A Cocktail", class: "btn btn-primary" %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

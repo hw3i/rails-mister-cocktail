@@ -28,6 +28,8 @@ class CocktailsController < ApplicationController
   end
 
   def update
+    @cocktail.update(cocktail_params)
+    redirect_to cocktail_path(@cocktail)
   end
 
   def destroy
@@ -43,7 +45,7 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     # Filtering/Whitelisting the params that come in from the form
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, photos: [])
   end
 
 end

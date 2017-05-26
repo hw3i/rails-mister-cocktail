@@ -1,5 +1,10 @@
 <div class="container padded">
   <h1><%= @cocktail.name %></h1>
+  <% if @cocktail.photos? %>
+    <% @cocktail.photos.each do |photo|  %>
+      <%= cl_image_tag photo.path, width: 200, height: 300, crop: :fill %>
+    <% end %>
+  <% end %>
 
     <ul>
       <% @cocktail.doses.each do |dose| %>
@@ -9,7 +14,7 @@
     </ul>
     <br>
 
-
+  <%= link_to "Edit Cocktail List", edit_cocktail_path %> ||
   <%= link_to "Back To Cocktail List", cocktails_path %>
 </div>
 
