@@ -1,20 +1,27 @@
+<div class="banner-show" style="background-image: linear-gradient(-225deg, rgba(62, 85, 216, 0.6) 0%, rgba(124, 131, 175, 0.6) 50%), url('<%= cl_image_path @cocktail.photos? ? @cocktail.photos.first.path : 'drink_yqodry', crop: :fill %>');">
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+    <h2>Recipe</h2>
+  </div>
+</div>
+
 <div class="container padded">
-  <h1><%= @cocktail.name %></h1>
   <% if @cocktail.photos? %>
     <% @cocktail.photos.each do |photo|  %>
-      <%= cl_image_tag photo.path, width: 200, height: 300, crop: :fill %>
+      <%= cl_image_tag photo.path, width: 350, height: 200, crop: :fill %>
     <% end %>
   <% end %>
-
+  <h2>Ingredients</h2>
     <ul>
       <% @cocktail.doses.each do |dose| %>
         <h3><li><%= dose.description %> - <%= dose.ingredient.name %></li></h3>
         <p><%= link_to "Delete Dose", dose_path(dose), method: :delete %></p>
+        <hr>
       <% end %>
     </ul>
     <br>
 
-  <%= link_to "Edit Cocktail List", edit_cocktail_path %> ||
+  <%= link_to "Edit Cocktail", edit_cocktail_path %> ||
   <%= link_to "Back To Cocktail List", cocktails_path %>
 </div>
 
